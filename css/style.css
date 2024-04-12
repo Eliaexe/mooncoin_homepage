@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    background-color: #070720;
+    overflow: hidden;
+}
+
+#earth,
+#moon {
+    position: absolute;
+    bottom: 50%;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#earth {
+    left: 25%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0px 0px 20px 5px rgba(33, 29, 76, 0.75);
+}
+
+#moon {
+    right: 25%;
+    width: 40px;
+    height: 40px;
+}
+
+#square {
+    position: absolute;
+    bottom: 45%;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+    width: 30px;
+    z-index: -1;
+    background-color: transparent;
+    animation: moveSquare 10s linear infinite;
+}
+
+#counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+    width: 75%;
+    margin: 80px auto -80px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    z-index: 1;
+    border: solid 2px white;
+}
+
+#animation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    overflow: hidden;
+}
+
+.point {
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.moveStars {
+    animation: moveLeft .7s linear infinite;
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes moveSquare {
+    0% {
+        left: 27%;
+    }
+
+    100% {
+        left: 73%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #moon {
+        right: 20%;
+        bottom: 51.5%;
+    }
+
+    #earth {
+        left: 20%;
+    }
+
+    #square {
+        bottom: 44%;
+    }
+
+    .moveStars {
+        animation: moveLeft .5s linear infinite;
+    }
+    
+
+    @keyframes moveSquare {
+        0% {
+            left: 30%;
+        }
+    
+        100% {
+            left: 73%;
+        }
+    }
+
+    @keyframes moveLeft {
+        from {
+            transform: translateX(0);
+        }
+    
+        to {
+            transform: translateX(-110vw);
+        }
+    }
+}
+    
